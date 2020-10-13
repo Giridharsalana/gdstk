@@ -1,0 +1,6 @@
+﻿gdstk.regular\_polygon
+======================
+
+.. currentmodule:: gdstk
+
+.. autofunction:: regular_polygon

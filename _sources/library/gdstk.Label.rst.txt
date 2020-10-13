@@ -1,0 +1,46 @@
+﻿gdstk.Label
+===========
+
+.. currentmodule:: gdstk
+
+.. autoclass:: Label
+   :members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+         ~Label.copy
+      
+      
+         ~Label.delete_property
+      
+      
+         ~Label.get_property
+      
+      
+         ~Label.set_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Label.anchor
+      ~Label.layer
+      ~Label.magnification
+      ~Label.origin
+      ~Label.rotation
+      ~Label.text
+      ~Label.texttype
+      ~Label.x_reflection
+   
+   

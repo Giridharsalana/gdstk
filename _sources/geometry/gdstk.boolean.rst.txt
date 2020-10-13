@@ -1,0 +1,6 @@
+﻿gdstk.boolean
+=============
+
+.. currentmodule:: gdstk
+
+.. autofunction:: boolean

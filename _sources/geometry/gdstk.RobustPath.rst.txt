@@ -1,0 +1,117 @@
+﻿gdstk.RobustPath
+================
+
+.. currentmodule:: gdstk
+
+.. autoclass:: RobustPath
+   :members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+         ~RobustPath.arc
+      
+      
+         ~RobustPath.bezier
+      
+      
+         ~RobustPath.commands
+      
+      
+         ~RobustPath.copy
+      
+      
+         ~RobustPath.cubic
+      
+      
+         ~RobustPath.cubic_smooth
+      
+      
+         ~RobustPath.delete_property
+      
+      
+         ~RobustPath.get_property
+      
+      
+         ~RobustPath.gradient
+      
+      
+         ~RobustPath.horizontal
+      
+      
+         ~RobustPath.interpolation
+      
+      
+         ~RobustPath.mirror
+      
+      
+         ~RobustPath.offsets
+      
+      
+         ~RobustPath.parametric
+      
+      
+         ~RobustPath.position
+      
+      
+         ~RobustPath.quadratic
+      
+      
+         ~RobustPath.quadratic_smooth
+      
+      
+         ~RobustPath.rotate
+      
+      
+         ~RobustPath.scale
+      
+      
+         ~RobustPath.segment
+      
+      
+         ~RobustPath.set_datatypes
+      
+      
+         ~RobustPath.set_layers
+      
+      
+         ~RobustPath.set_property
+      
+      
+         ~RobustPath.spine
+      
+      
+         ~RobustPath.to_polygons
+      
+      
+         ~RobustPath.translate
+      
+      
+         ~RobustPath.turn
+      
+      
+         ~RobustPath.vertical
+      
+      
+         ~RobustPath.widths
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~RobustPath.datatypes
+      ~RobustPath.layers
+      ~RobustPath.num_paths
+      ~RobustPath.size
+   
+   

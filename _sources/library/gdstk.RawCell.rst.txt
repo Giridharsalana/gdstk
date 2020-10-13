@@ -1,0 +1,31 @@
+﻿gdstk.RawCell
+=============
+
+.. currentmodule:: gdstk
+
+.. autoclass:: RawCell
+   :members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+         ~RawCell.dependencies
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~RawCell.name
+      ~RawCell.size
+   
+   

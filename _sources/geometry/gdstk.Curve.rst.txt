@@ -1,0 +1,69 @@
+﻿gdstk.Curve
+===========
+
+.. currentmodule:: gdstk
+
+.. autoclass:: Curve
+   :members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+         ~Curve.arc
+      
+      
+         ~Curve.bezier
+      
+      
+         ~Curve.commands
+      
+      
+         ~Curve.cubic
+      
+      
+         ~Curve.cubic_smooth
+      
+      
+         ~Curve.horizontal
+      
+      
+         ~Curve.interpolation
+      
+      
+         ~Curve.parametric
+      
+      
+         ~Curve.points
+      
+      
+         ~Curve.quadratic
+      
+      
+         ~Curve.quadratic_smooth
+      
+      
+         ~Curve.segment
+      
+      
+         ~Curve.turn
+      
+      
+         ~Curve.vertical
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Curve.tolerance
+   
+   

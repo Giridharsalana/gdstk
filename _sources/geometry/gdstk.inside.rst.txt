@@ -1,0 +1,6 @@
+﻿gdstk.inside
+============
+
+.. currentmodule:: gdstk
+
+.. autofunction:: inside

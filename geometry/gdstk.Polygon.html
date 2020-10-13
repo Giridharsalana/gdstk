@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>gdstk.Polygon &mdash; gdstk 0.1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gdstk.Curve" href="gdstk.Curve.html" />
+    <link rel="prev" title="Python API Reference" href="../reference_python.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gdstk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference_python.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../reference_python.html#geometry-construction">Geometry Construction</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">gdstk.Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.Curve.html">gdstk.Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.FlexPath.html">gdstk.FlexPath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.RobustPath.html">gdstk.RobustPath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.rectangle.html">gdstk.rectangle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.cross.html">gdstk.cross</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.regular_polygon.html">gdstk.regular_polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.ellipse.html">gdstk.ellipse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.racetrack.html">gdstk.racetrack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.text.html">gdstk.text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.offset.html">gdstk.offset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.boolean.html">gdstk.boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.slice.html">gdstk.slice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.inside.html">gdstk.inside</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference_python.html#library-organization">Library Organization</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gdstk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../reference_python.html">Python API Reference</a> &raquo;</li>
+        
+      <li>gdstk.Polygon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/geometry/gdstk.Polygon.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gdstk-polygon">
+<h1>gdstk.Polygon<a class="headerlink" href="#gdstk-polygon" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="gdstk.Polygon">
+<em class="property">class </em><code class="sig-prename descclassname">gdstk.</code><code class="sig-name descname">Polygon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">datatype</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdstk.Polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polygonal geometric object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>sequence</em>) – Vertices of the polygon. Each element can be a
+pair of coordinates or a complex value.</p></li>
+<li><p><strong>layer</strong> – GDSII layer number assigned to this polygon.</p></li>
+<li><p><strong>datatype</strong> – GDSII data type number assigned to this polygon.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">1.5</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="n">j</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_2</span> <span class="o">=</span> <span class="n">gsdkt</span><span class="o">.</span><span class="n">Polygon</span><span class="p">([</span><span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/init2.svg" class="align-center" src="../_images/init2.svg" /><p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.area" title="gdstk.Polygon.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area</span></code></a>()</p></td>
+<td><p>Polygon area.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.bounding_box" title="gdstk.Polygon.bounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bounding_box</span></code></a>()</p></td>
+<td><p>Calculate the polygon bounding box.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.copy" title="gdstk.Polygon.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Create a copy this polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.delete_property" title="gdstk.Polygon.delete_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_property</span></code></a>(attr)</p></td>
+<td><p>Delete property of this polygon.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.fillet" title="gdstk.Polygon.fillet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillet</span></code></a>(radius[, tolerance])</p></td>
+<td><p>Fillet the corners of this polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.fracture" title="gdstk.Polygon.fracture"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fracture</span></code></a>([max_points, precision])</p></td>
+<td><p>Fracture this polygon into a list of polygons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.get_property" title="gdstk.Polygon.get_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_property</span></code></a>(attr)</p></td>
+<td><p>Return a property of this polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.mirror" title="gdstk.Polygon.mirror"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mirror</span></code></a>(p1[, p2])</p></td>
+<td><p>Mirror this polygon across the line through <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.rotate" title="gdstk.Polygon.rotate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotate</span></code></a>(angle[, center])</p></td>
+<td><p>Rotate this polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.scale" title="gdstk.Polygon.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>(sx[, sy, center])</p></td>
+<td><p>Scale this polygon.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.set_property" title="gdstk.Polygon.set_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_property</span></code></a>(attr, value)</p></td>
+<td><p>Set a GDSII property for this polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.translate" title="gdstk.Polygon.translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">translate</span></code></a>(dx, dy)</p></td>
+<td><p>Translate this polygon.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.datatype" title="gdstk.Polygon.datatype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datatype</span></code></a></p></td>
+<td><p>Polygon data type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.layer" title="gdstk.Polygon.layer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layer</span></code></a></p></td>
+<td><p>Polygon layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Polygon.points" title="gdstk.Polygon.points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">points</span></code></a></p></td>
+<td><p>Vertiecs of the polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Polygon.size" title="gdstk.Polygon.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></p></td>
+<td><p>Number of vertices in this polygon.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="gdstk.Polygon.area">
+<code class="sig-name descname">area</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#gdstk.Polygon.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polygon area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Area of the polygon.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.bounding_box">
+<code class="sig-name descname">bounding_box</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#gdstk.Polygon.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the polygon bounding box.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The lower-left and upper-right corners of the bounding box of the
+polygon: <code class="docutils literal notranslate"><span class="pre">((min_x,</span> <span class="pre">min_y),</span> <span class="pre">(max_x,</span> <span class="pre">max_y))</span></code>.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygon</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bbox</span> <span class="o">=</span> <span class="n">polygon</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
+<span class="go">((0.0, -1.0), (3.0, 2.0))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_bb</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="o">*</span><span class="n">bbox</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/bounding_box.svg" class="align-center" src="../_images/bounding_box.svg" /></dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gdstk.Polygon" title="gdstk.Polygon">gdstk.Polygon</a><a class="headerlink" href="#gdstk.Polygon.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Copy of this polygon.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Polygon.datatype">
+<code class="sig-name descname">datatype</code><a class="headerlink" href="#gdstk.Polygon.datatype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polygon data type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.delete_property">
+<code class="sig-name descname">delete_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.delete_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete property of this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attr</strong> (<em>number</em>) – Property number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.fillet">
+<code class="sig-name descname">fillet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radius</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.fillet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fillet the corners of this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>number</em><em> or </em><em>sequence</em>) – Fillet radius. A sequence of values can
+be used to define the fillet radius for each vertex.</p></li>
+<li><p><strong>tolerance</strong> – Tolerance used for calculating the polygonal
+approximation of the filleted corners.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>The actual fillet radius for a given corner is the specified value
+or half the lenght of the shortest segment adjacent to that corner,
+whichever is smaller.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>          <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">.</span><span class="n">fillet</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/fillet.svg" class="align-center" src="../_images/fillet.svg" /></dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.fracture">
+<code class="sig-name descname">fracture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_points</span><span class="o">=</span><span class="default_value">199</span></em>, <em class="sig-param"><span class="n">precision</span><span class="o">=</span><span class="default_value">0.001</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.fracture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fracture this polygon into a list of polygons.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_points</strong> – Maximal number of vertices for each resulting polygon.
+Official GDSII documentation requires that all polygons have at
+most 199 vertices, but 8190 is usually supported by most software.</p></li>
+<li><p><strong>precision</strong> – Desired vertex precision for fracturing.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygon</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">racetrack</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">poly_list</span> <span class="o">=</span> <span class="n">polygon</span><span class="o">.</span><span class="n">fracture</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">poly_list</span><span class="p">))</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">poly_list</span><span class="p">])</span>
+<span class="go">[102, 103, 103, 101, 101, 102, 102, 103, 103, 102]</span>
+</pre></div>
+</div>
+<img alt="../_images/fracture.svg" class="align-center" src="../_images/fracture.svg" /></dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.get_property">
+<code class="sig-name descname">get_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#gdstk.Polygon.get_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a property of this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attr</strong> (<em>number</em>) – Property number.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Property value. If the property number does not exist,
+<code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Polygon.layer">
+<code class="sig-name descname">layer</code><a class="headerlink" href="#gdstk.Polygon.layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polygon layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.mirror">
+<code class="sig-name descname">mirror</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p1</span></em>, <em class="sig-param"><span class="n">p2</span><span class="o">=</span><span class="default_value">0, 0</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.mirror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mirror this polygon across the line through <code class="docutils literal notranslate"><span class="pre">p1</span></code> and <code class="docutils literal notranslate"><span class="pre">p2</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p1</strong> (<em>coordinate pair</em><em> or </em><em>complex</em>) – First point in the mirror line.</p></li>
+<li><p><strong>p2</strong> (<em>coordinate pair</em><em> or </em><em>complex</em>) – Second point in the mirror line.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Polygon.points">
+<code class="sig-name descname">points</code><a class="headerlink" href="#gdstk.Polygon.points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertiecs of the polygon.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>This attribute is read-only.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.rotate">
+<code class="sig-name descname">rotate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">angle</span></em>, <em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">0, 0</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angle</strong> – Rotation angle (in radians).</p></li>
+<li><p><strong>center</strong> (<em>coordinate pair</em><em> or </em><em>complex</em>) – Center of the transformation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.scale">
+<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sx</span></em>, <em class="sig-param"><span class="n">sy</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">center</span><span class="o">=</span><span class="default_value">0, 0</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sx</strong> – Scaling in the x direction.</p></li>
+<li><p><strong>sy</strong> – Scaling in the y direction. If set to 0, <code class="docutils literal notranslate"><span class="pre">sx</span></code> is used instead.</p></li>
+<li><p><strong>center</strong> (<em>coordinate pair</em><em> or </em><em>complex</em>) – Center of the transformation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.set_property">
+<code class="sig-name descname">set_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.set_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a GDSII property for this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attr</strong> (<em>number</em>) – Property number.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Property value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Polygon.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#gdstk.Polygon.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of vertices in this polygon.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>This attribute is read-only.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Polygon.translate">
+<code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dx</span></em>, <em class="sig-param"><span class="n">dy</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Polygon.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> – Translation in the x coordinate.</p></li>
+<li><p><strong>dy</strong> – Translation in the y coordinate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gdstk.Curve.html" class="btn btn-neutral float-right" title="gdstk.Curve" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../reference_python.html" class="btn btn-neutral float-left" title="Python API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Lucas H. Gabrielli
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

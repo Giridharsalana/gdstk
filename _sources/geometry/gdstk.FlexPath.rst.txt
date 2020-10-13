@@ -1,0 +1,111 @@
+﻿gdstk.FlexPath
+==============
+
+.. currentmodule:: gdstk
+
+.. autoclass:: FlexPath
+   :members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+         ~FlexPath.arc
+      
+      
+         ~FlexPath.bezier
+      
+      
+         ~FlexPath.commands
+      
+      
+         ~FlexPath.copy
+      
+      
+         ~FlexPath.cubic
+      
+      
+         ~FlexPath.cubic_smooth
+      
+      
+         ~FlexPath.delete_property
+      
+      
+         ~FlexPath.get_property
+      
+      
+         ~FlexPath.horizontal
+      
+      
+         ~FlexPath.interpolation
+      
+      
+         ~FlexPath.mirror
+      
+      
+         ~FlexPath.offsets
+      
+      
+         ~FlexPath.parametric
+      
+      
+         ~FlexPath.quadratic
+      
+      
+         ~FlexPath.quadratic_smooth
+      
+      
+         ~FlexPath.rotate
+      
+      
+         ~FlexPath.scale
+      
+      
+         ~FlexPath.segment
+      
+      
+         ~FlexPath.set_datatypes
+      
+      
+         ~FlexPath.set_layers
+      
+      
+         ~FlexPath.set_property
+      
+      
+         ~FlexPath.spine
+      
+      
+         ~FlexPath.to_polygons
+      
+      
+         ~FlexPath.translate
+      
+      
+         ~FlexPath.turn
+      
+      
+         ~FlexPath.vertical
+      
+      
+         ~FlexPath.widths
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~FlexPath.datatypes
+      ~FlexPath.layers
+      ~FlexPath.num_paths
+      ~FlexPath.size
+   
+   

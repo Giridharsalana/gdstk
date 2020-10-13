@@ -1,0 +1,6 @@
+﻿gdstk.ellipse
+=============
+
+.. currentmodule:: gdstk
+
+.. autofunction:: ellipse

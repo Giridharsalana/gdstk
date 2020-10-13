@@ -1,0 +1,1363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; gdstk 0.1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python API Reference" href="reference_python.html" />
+    <link rel="prev" title="Gdstk Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> gdstk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#first-gdsii-layout">First GDSII Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#polygons">Polygons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#holes">Holes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circles">Circles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#curves">Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformations">Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#layer-and-datatype">Layer and Datatype</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paths">Paths</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flexible-paths">Flexible Paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#robust-paths">Robust Paths</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#text">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geometry-operations">Geometry Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#boolean-operations">Boolean Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slice-operation">Slice Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#offset-operation">Offset Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fillet-operation">Fillet Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gdsii-library">GDSII Library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#units-in-gdsii">Units in GDSII</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-a-gdsii-file">Saving a GDSII File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-a-gdsii-file">Loading a GDSII File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raw-cells">Raw Cells</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#integrated-photonics">Integrated Photonics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-system-fonts">Using System Fonts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference_python.html">Python API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gdstk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/gettingstarted.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>GDSII files contain a hierarchical representation of any polygonal geometry.
+They are mainly used in the microelectronics industry for the design of mask layouts, but are also employed in other areas.</p>
+<p>Because it is a hierarchical format, repeated structures, such as identical transistors, can be defined once and referenced multiple times in the layout, reducing the file size.</p>
+<p>There is one important limitation in the GDSII format: it only supports <a class="reference external" href="https://en.wikipedia.org/wiki/Simple_polygon">weakly simple polygons</a>, that is, polygons whose segments are allowed to intersect, but not cross.</p>
+<p>In particular, curves and shapes with holes are <em>not</em> directly supported.
+Holes can be defined, nonetheless, by connecting their boundary to the boundary of the enclosing shape.
+In the case of curves, they must be approximated by a polygon.
+The number of points in the polygonal approximation can be increased to better approximate the original curve up to some acceptable error.</p>
+<p>The original GDSII format limits the number of vertices in a polygon to 199.
+This limit seems arbitrary, as the maximal number of vertices that can be stored in a GDSII record is 8190.
+Nonetheless, most modern software disregard both limits and allow an arbitrary number of points per polygon.
+Gdstk follows the modern version of GDSII, but this is an important issue to keep in mind if the generated file is to be used in older systems.</p>
+<p>The units used to represent shapes in the GDSII format are defined by the user.
+The default unit in Gdstk is 1 µm (10⁻⁶ m), but that can be easily changed by the user.</p>
+<div class="section" id="first-gdsii-layout">
+<span id="first-gdsii"></span><h2>First GDSII Layout<a class="headerlink" href="#first-gdsii-layout" title="Permalink to this headline">¶</a></h2>
+<p>Let’s create our first GDSII file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gdstk</span>
+
+<span class="c1"># The GDSII file is called a library, which contains multiple cells.</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+
+<span class="c1"># Geometry must be placed in cells.</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s1">&#39;FIRST&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create the geometry (a single rectangle) and add it to the cell.</span>
+<span class="n">rect</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+
+<span class="c1"># Save the library in a file called &#39;first.gds&#39;.</span>
+<span class="n">lib</span><span class="o">.</span><span class="n">write_gds</span><span class="p">(</span><span class="s1">&#39;first.gds&#39;</span><span class="p">)</span>
+
+<span class="c1"># Optionally, save an image of the cell as SVG.</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">write_svg</span><span class="p">(</span><span class="s1">&#39;first.svg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After importing the <code class="docutils literal notranslate"><span class="pre">gdstk</span></code> module, we create a library <code class="docutils literal notranslate"><span class="pre">lib</span></code> to hold the design.</p>
+<p>All layout elements must be added to cells, which can be though of pieces of papers where the geometry is drawn.
+Later, a cell can reference others to build hierarchical designs, as if stamping the referenced cell into the first, as we’ll see in <a class="reference internal" href="#references"><span class="std std-ref">References</span></a>.</p>
+<p>We create a <a class="reference internal" href="library/gdstk.Cell.html#gdstk.Cell" title="gdstk.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Cell</span></code></a> with name “FIRST” (cells are identified by name, therefore cell names must be unique within a library) and add a <a class="reference internal" href="geometry/gdstk.rectangle.html#gdstk.rectangle" title="gdstk.rectangle"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.rectangle()</span></code></a> to it.</p>
+<p>Finally, the whole library is saved in a file called “first.gds” in the current directory.
+The GDSII file can be opened in a number of viewers and editors, such as <a class="reference external" href="https://klayout.de/">KLayout</a>.</p>
+</div>
+<div class="section" id="polygons">
+<h2>Polygons<a class="headerlink" href="#polygons" title="Permalink to this headline">¶</a></h2>
+<p>General polygons can be defined by an ordered list of vertices.
+The orientation of the vertices (clockwise/counter-clockwise) is not important: they will be ordered internally.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a polygon from a list of vertices</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/polygons.svg" class="align-center" src="_images/polygons.svg" /><div class="section" id="holes">
+<h3>Holes<a class="headerlink" href="#holes" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned in <a class="reference internal" href="#getting-started"><span class="std std-ref">Getting Started</span></a>, holes have to be connected to the outer boundary of the polygon, as in the following example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Manually connect the hole to the outer boundary</span>
+<span class="n">cutout</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span>
+    <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/holes.svg" class="align-center" src="_images/holes.svg" /></div>
+<div class="section" id="circles">
+<h3>Circles<a class="headerlink" href="#circles" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="geometry/gdstk.ellipse.html#gdstk.ellipse" title="gdstk.ellipse"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.ellipse()</span></code></a> function creates circles, ellipses, doughnuts, arcs and slices.
+In all cases, the argument <code class="docutils literal notranslate"><span class="pre">tolerance</span></code> will control the number of vertices used to approximate the curved shapes.</p>
+<p>When saving a library with <a class="reference internal" href="library/gdstk.Library.html#gdstk.Library.write_gds" title="gdstk.Library.write_gds"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Library.write_gds()</span></code></a>, if the number of vertices in the polygon is larger than <code class="docutils literal notranslate"><span class="pre">max_points</span></code> (199 by default), it will be fractured in many smaller polygons with at most <code class="docutils literal notranslate"><span class="pre">max_points</span></code> vertices each.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Circle centered at (0, 0), with radius 2 and tolerance 0.1</span>
+<span class="n">circle</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># To create an ellipse, simply pass a list with 2 radii.</span>
+<span class="c1"># Because the tolerance is small (resulting a large number of</span>
+<span class="c1"># vertices), the ellipse is fractured in 2 polygons.</span>
+<span class="n">ellipse</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+
+<span class="c1"># Circular arc example</span>
+<span class="n">arc</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="mi">2</span><span class="p">,</span>
+    <span class="n">inner_radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">initial_angle</span><span class="o">=-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span>
+    <span class="n">final_angle</span><span class="o">=</span><span class="mf">1.2</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span>
+    <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/circles.svg" class="align-center" src="_images/circles.svg" /></div>
+<div class="section" id="curves">
+<h3>Curves<a class="headerlink" href="#curves" title="Permalink to this headline">¶</a></h3>
+<p>Constructing complex polygons by manually listing all vertices in <a class="reference internal" href="geometry/gdstk.Polygon.html#gdstk.Polygon" title="gdstk.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Polygon</span></code></a> can be challenging.
+The class <a class="reference internal" href="geometry/gdstk.Curve.html#gdstk.Curve" title="gdstk.Curve"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Curve</span></code></a> can be used to facilitate the creation of polygons by drawing their shapes step-by-step.
+The syntax is inspired by the <a class="reference external" href="https://www.w3.org/TR/SVG/paths.html">SVG path specification</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct a curve made of a sequence of line segments</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Curve</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">segment</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">c1</span><span class="o">.</span><span class="n">points</span><span class="p">())</span>
+
+<span class="c1"># Construct another curve using relative coordinates</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Curve</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">segment</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">c2</span><span class="o">.</span><span class="n">points</span><span class="p">())</span>
+</pre></div>
+</div>
+<img alt="_images/curves.svg" class="align-center" src="_images/curves.svg" /><p>Coordinate pairs can be given as a complex number: real and imaginary parts are used as x and y coordinates, respectively.
+That is useful to define points in polar coordinates.</p>
+<p>Elliptical arcs have syntax similar to <a class="reference internal" href="geometry/gdstk.ellipse.html#gdstk.ellipse" title="gdstk.ellipse"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.ellipse()</span></code></a>, but they allow for an extra rotation of the major axis of the ellipse.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use complex numbers to facilitate writing polar coordinates</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Elliptical arcs have syntax similar to gdstk.ellipse</span>
+<span class="n">c3</span><span class="o">.</span><span class="n">arc</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">c3</span><span class="o">.</span><span class="n">points</span><span class="p">())</span>
+</pre></div>
+</div>
+<img alt="_images/curves_1.svg" class="align-center" src="_images/curves_1.svg" /><p>Curves sections can be constructed as cubic, quadratic and general-degree Bézier curves.
+Additionally, a smooth interpolating curve can be calculated with the method <a class="reference internal" href="geometry/gdstk.Curve.html#gdstk.Curve.interpolation" title="gdstk.Curve.interpolation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Curve.interpolation()</span></code></a>, which has a number of arguments to control the shape of the curve.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cubic Bezier curves can be easily created</span>
+<span class="n">c4</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Curve</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+<span class="n">c4</span><span class="o">.</span><span class="n">cubic</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+<span class="c1"># Smooth continuation:</span>
+<span class="n">c4</span><span class="o">.</span><span class="n">cubic_smooth</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Similarly for quadratic Bezier curves</span>
+<span class="n">c4</span><span class="o">.</span><span class="n">quadratic</span><span class="p">([(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">c4</span><span class="o">.</span><span class="n">quadratic_smooth</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Smooth interpolating curve</span>
+<span class="n">c4</span><span class="o">.</span><span class="n">interpolation</span><span class="p">([(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">c4</span><span class="o">.</span><span class="n">points</span><span class="p">())</span>
+</pre></div>
+</div>
+<img alt="_images/curves_2.svg" class="align-center" src="_images/curves_2.svg" /></div>
+<div class="section" id="transformations">
+<h3>Transformations<a class="headerlink" href="#transformations" title="Permalink to this headline">¶</a></h3>
+<p>All polygons can be transformed trough <a class="reference internal" href="geometry/gdstk.Polygon.html#gdstk.Polygon.translate" title="gdstk.Polygon.translate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Polygon.translate()</span></code></a>, <a class="reference internal" href="geometry/gdstk.Polygon.html#gdstk.Polygon.rotate" title="gdstk.Polygon.rotate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Polygon.rotate()</span></code></a>, <a class="reference internal" href="geometry/gdstk.Polygon.html#gdstk.Polygon.scale" title="gdstk.Polygon.scale"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Polygon.scale()</span></code></a>, and <a class="reference internal" href="geometry/gdstk.Polygon.html#gdstk.Polygon.mirror" title="gdstk.Polygon.mirror"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Polygon.mirror()</span></code></a>.
+The transformations are applied in-place, i.e., no new polygons are created.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">poly</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">poly</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/transformations.svg" class="align-center" src="_images/transformations.svg" /></div>
+<div class="section" id="layer-and-datatype">
+<h3>Layer and Datatype<a class="headerlink" href="#layer-and-datatype" title="Permalink to this headline">¶</a></h3>
+<p>All shapes in the GDSII format are tagged with 2 properties: layer and data type (or text type in the case of <a class="reference internal" href="library/gdstk.Label.html#gdstk.Label" title="gdstk.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Label</span></code></a>).
+They are always 0 by default, but can be any integer in the range from 0 to 255.</p>
+<p>These properties have no predefined meaning.
+It is up to the system using the GDSII file to chose with to do with those tags.
+For example, in the CMOS fabrication process, each layer could represent a different lithography level.</p>
+<p>In the example below, a single file stores different fabrication masks in separate layer and data type configurations.
+Python dictionaries are used to simplify the assignment to each polygon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Layer/datatype definitions for each step in the fabrication</span>
+<span class="n">ld</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;full etch&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;datatype&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+    <span class="s2">&quot;partial etch&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;datatype&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+    <span class="s2">&quot;lift-off&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;datatype&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="o">**</span><span class="n">ld</span><span class="p">[</span><span class="s2">&quot;full etch&quot;</span><span class="p">])</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="o">**</span><span class="n">ld</span><span class="p">[</span><span class="s2">&quot;partial etch&quot;</span><span class="p">])</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="o">**</span><span class="n">ld</span><span class="p">[</span><span class="s2">&quot;partial etch&quot;</span><span class="p">])</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">regular_polygon</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">**</span><span class="n">ld</span><span class="p">[</span><span class="s2">&quot;lift-off&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="_images/layer_and_datatype.svg" class="align-center" src="_images/layer_and_datatype.svg" /></div>
+</div>
+<div class="section" id="references">
+<span id="id2"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>References are responsible for the hierarchical structure of the layout.
+Through references, the cell content can be reused in another cell (without actually copying the whole geometry).
+As an example, imagine the we are designing an electronic circuit that uses hundreds of transistors, all with the same shape.
+We can draw the transistor just once and reference it throughout the circuit, rotating or mirroring each instance as necessary.</p>
+<p>Besides creating single references, it is also possible to create full 2D arrays with a single entity, both using <a class="reference internal" href="library/gdstk.Reference.html#gdstk.Reference" title="gdstk.Reference"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Reference</span></code></a>.
+Both uses are exemplified below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a cell with a component that is used repeatedly</span>
+<span class="n">contact</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="s2">&quot;CONTACT&quot;</span><span class="p">)</span>
+<span class="n">contact</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">)</span>
+
+<span class="c1"># Create a cell with the complete device</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="s2">&quot;DEVICE&quot;</span><span class="p">)</span>
+<span class="n">device</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cutout</span><span class="p">)</span>
+<span class="c1"># Add 2 references to the component changing size and orientation</span>
+<span class="n">ref1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">magnification</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">ref2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">contact</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">),</span> <span class="n">magnification</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">device</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ref1</span><span class="p">,</span> <span class="n">ref2</span><span class="p">)</span>
+
+<span class="c1"># The final layout has several repetitions of the complete device</span>
+<span class="n">main</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="s2">&quot;MAIN&quot;</span><span class="p">)</span>
+<span class="n">main</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)))</span>
+</pre></div>
+</div>
+<img alt="_images/references.svg" class="align-center" src="_images/references.svg" /></div>
+<div class="section" id="paths">
+<h2>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h2>
+<p>Besides polygons, the GDSII format defines paths, witch are <a class="reference external" href="https://en.wikipedia.org/wiki/Polygonal_chain">polygonal chains</a> with associated width and end caps.
+The width is a single number, constant throughout the path, and the end caps can be flush, round, or extended by a custom distance.</p>
+<p>There is no specification for the joins between adjacent segments, so it is up to the system using the GDSII file to specify those.
+Usually the joins are straight extensions of the path boundaries up to some beveling limit.
+Gdstk also uses this specification for the joins.</p>
+<p>It is possible to circumvent all of the above limitations within Gdstk by storing paths as polygons in the GDSII file.
+The disadvantage of this solution is that other software will not be able to edit the geometry as paths, since that information is lost.</p>
+<p>The construction of paths (either GDSII paths or polygonal paths) in Gdstk is based on <a class="reference internal" href="geometry/gdstk.FlexPath.html#gdstk.FlexPath" title="gdstk.FlexPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.FlexPath</span></code></a> and <a class="reference internal" href="geometry/gdstk.RobustPath.html#gdstk.RobustPath" title="gdstk.RobustPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.RobustPath</span></code></a>.</p>
+<div class="section" id="flexible-paths">
+<h3>Flexible Paths<a class="headerlink" href="#flexible-paths" title="Permalink to this headline">¶</a></h3>
+<p>The class <a class="reference internal" href="geometry/gdstk.FlexPath.html#gdstk.FlexPath" title="gdstk.FlexPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.FlexPath</span></code></a> is a mirror of <a class="reference internal" href="geometry/gdstk.Curve.html#gdstk.Curve" title="gdstk.Curve"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Curve</span></code></a> before, with additional features to facilitate path creation:</p>
+<ul class="simple">
+<li><p>all curve construction methods are available;</p></li>
+<li><p>path width can be easily controlled throughout the path;</p></li>
+<li><p>end caps and joins can be specified by the user;</p></li>
+<li><p>straight segments can be automatically joined by circular arcs;</p></li>
+<li><p>multiple parallel paths can be designed simultaneously;</p></li>
+<li><p>spacing between parallel paths is arbitrary - the user specifies the offset of each path individually.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path defined by a sequence of points and stored as a GDSII path</span>
+<span class="n">fp1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span>
+    <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">gdsii_path</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="c1"># Other construction methods can still be used</span>
+<span class="n">fp1</span><span class="o">.</span><span class="n">interpolation</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Multiple parallel paths separated by 0.5 with different widths,</span>
+<span class="c1"># end caps, and joins.  Because of the join specification, they</span>
+<span class="c1"># cannot be stared as GDSII paths, only as polygons.</span>
+<span class="n">fp2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span>
+    <span class="p">[(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+    <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
+    <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">ends</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;extended&quot;</span><span class="p">,</span> <span class="s2">&quot;flush&quot;</span><span class="p">,</span> <span class="s2">&quot;round&quot;</span><span class="p">],</span>
+    <span class="n">joins</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bevel&quot;</span><span class="p">,</span> <span class="s2">&quot;miter&quot;</span><span class="p">,</span> <span class="s2">&quot;round&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">fp2</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">fp2</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/flexible_paths.svg" class="align-center" src="_images/flexible_paths.svg" /><p>The corner type ‘circular bend’ (together with the <cite>bend_radius</cite> argument) can be used to automatically curve the path.
+This feature is used in <a class="reference internal" href="#example-integrated-photonics"><span class="std std-ref">Integrated Photonics</span></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path created with automatic bends of radius 5</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]</span>
+<span class="n">fp3</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bend_radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">gdsii_path</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Same path, generated with natural joins, for comparison</span>
+<span class="n">fp4</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gdsii_path</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/flexible_paths_2.svg" class="align-center" src="_images/flexible_paths_2.svg" /><p>Width and offset variations are possible throughout the path.
+Changes are linearly tapered in the path section they are defined.
+Note that, because width changes are not possible for GDSII paths, they will be stored as polygonal objects.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Straight segment showing the possibility of width and offset changes</span>
+<span class="n">fp5</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fp5</span><span class="o">.</span><span class="n">horizontal</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fp5</span><span class="o">.</span><span class="n">horizontal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">1.8</span><span class="p">)</span>
+<span class="n">fp5</span><span class="o">.</span><span class="n">horizontal</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/flexible_paths_3.svg" class="align-center" src="_images/flexible_paths_3.svg" /></div>
+<div class="section" id="robust-paths">
+<h3>Robust Paths<a class="headerlink" href="#robust-paths" title="Permalink to this headline">¶</a></h3>
+<p>In some situations, <a class="reference internal" href="geometry/gdstk.FlexPath.html#gdstk.FlexPath" title="gdstk.FlexPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.FlexPath</span></code></a> is unable to properly calculate all the joins.
+This often happens when the width or offset of the path is relatively large with respect to the length of the segments being joined.
+Curves that meet other curves or segments at sharp angles are a typical example where this often happens.</p>
+<p>The class <a class="reference internal" href="geometry/gdstk.RobustPath.html#gdstk.RobustPath" title="gdstk.RobustPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.RobustPath</span></code></a> can be used in such scenarios where curved sections are expected to meet at sharp angles.
+The drawbacks of using <a class="reference internal" href="geometry/gdstk.RobustPath.html#gdstk.RobustPath" title="gdstk.RobustPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.RobustPath</span></code></a> are the extra computational resources required to calculate all joins and the impossibility of specifying joins.
+The advantages are, as mentioned earlier, more robustness when generating the final geometry, and freedom to use custom functions to parameterize the widths or offsets of the paths.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create 4 parallel paths in different layers</span>
+<span class="n">rp</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">RobustPath</span><span class="p">(</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">ends</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;extended&quot;</span><span class="p">,</span> <span class="s2">&quot;round&quot;</span><span class="p">,</span> <span class="s2">&quot;flush&quot;</span><span class="p">,</span> <span class="s2">&quot;flush&quot;</span><span class="p">],</span>
+    <span class="n">layer</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">rp</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+<span class="n">rp</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="n">width</span><span class="o">=</span><span class="p">[</span><span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">offset</span><span class="o">=</span><span class="p">[</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">u</span><span class="p">),</span>
+        <span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">),</span>
+        <span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">u</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="n">rp</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">rp</span><span class="o">.</span><span class="n">interpolation</span><span class="p">(</span>
+    <span class="p">[(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span>
+    <span class="n">angles</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">],</span>
+    <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">offset</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">rp</span><span class="o">.</span><span class="n">parametric</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">4</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">u</span><span class="p">),</span> <span class="mi">45</span> <span class="o">*</span> <span class="n">u</span><span class="p">)),</span>
+    <span class="n">offset</span><span class="o">=</span><span class="p">[</span>
+        <span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.25</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">u</span><span class="p">),</span>
+        <span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">u</span><span class="p">),</span>
+        <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span>
+        <span class="mf">0.75</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/robust_paths.svg" class="align-center" src="_images/robust_paths.svg" /><p>Note that, analogously to <a class="reference internal" href="geometry/gdstk.FlexPath.html#gdstk.FlexPath" title="gdstk.FlexPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.FlexPath</span></code></a>, <a class="reference internal" href="geometry/gdstk.RobustPath.html#gdstk.RobustPath" title="gdstk.RobustPath"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.RobustPath</span></code></a> can be stored as a GDSII path as long as its width is kept constant.</p>
+</div>
+</div>
+<div class="section" id="text">
+<h2>Text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<p>In the context of a GDSII file, text is supported in the form of labels, which are ASCII annotations placed somewhere in the geometry of a given cell.
+Similar to polygons, labels are tagged with layer and text type values (text type is the label equivalent of the polygon data type).
+They are supported by the class <a class="reference internal" href="library/gdstk.Label.html#gdstk.Label" title="gdstk.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Label</span></code></a>.</p>
+<p>Additionally, Gdstk offers the possibility of creating text as polygons to be included with the geometry.
+The function <a class="reference internal" href="geometry/gdstk.text.html#gdstk.text" title="gdstk.text"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.text()</span></code></a> creates polygonal text that can be used in the same way as any other polygons in Gdstk.
+The font used to render the characters contains only horizontal and vertical edges, which is important for some laser writing systems.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Label centered at (1, 3)</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">&quot;Sample label&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">texttype</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Horizontal text with height 2.25</span>
+<span class="n">htext</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Vertical text with height 1.5</span>
+<span class="n">vtext</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="p">(</span><span class="mf">10.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">vertical</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">rect</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">layer</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/text1.svg" class="align-center" src="_images/text1.svg" /></div>
+<div class="section" id="geometry-operations">
+<h2>Geometry Operations<a class="headerlink" href="#geometry-operations" title="Permalink to this headline">¶</a></h2>
+<p>Gdstk offers a number of functions and methods to modify existing geometry.
+The most useful operations include <a class="reference internal" href="geometry/gdstk.boolean.html#gdstk.boolean" title="gdstk.boolean"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.boolean()</span></code></a>, <a class="reference internal" href="geometry/gdstk.slice.html#gdstk.slice" title="gdstk.slice"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.slice()</span></code></a>, <a class="reference internal" href="geometry/gdstk.offset.html#gdstk.offset" title="gdstk.offset"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.offset()</span></code></a>, and <a class="reference internal" href="geometry/gdstk.Polygon.html#gdstk.Polygon.fillet" title="gdstk.Polygon.fillet"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Polygon.fillet()</span></code></a>.</p>
+<div class="section" id="boolean-operations">
+<h3>Boolean Operations<a class="headerlink" href="#boolean-operations" title="Permalink to this headline">¶</a></h3>
+<p>Boolean operations (<a class="reference internal" href="geometry/gdstk.boolean.html#gdstk.boolean" title="gdstk.boolean"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.boolean()</span></code></a>) can be performed on polygons, paths and whole cells.
+Four operations are defined: union (“or”), intersection (“and”), subtraction (“not”), and symmetric difference (“xor”).
+They can be computationally expensive, so it is usually advisable to avoid using boolean operations whenever possible.
+If they are necessary, keeping the number of vertices is all polygons as low as possible also helps.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create some text</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;GDSTK&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="c1"># Create a rectangle extending the text&#39;s bounding box by 1</span>
+<span class="n">rect</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">16</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Subtract the text from the rectangle</span>
+<span class="n">inv</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">boolean</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="s2">&quot;not&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/boolean_operations.svg" class="align-center" src="_images/boolean_operations.svg" /></div>
+<div class="section" id="slice-operation">
+<h3>Slice Operation<a class="headerlink" href="#slice-operation" title="Permalink to this headline">¶</a></h3>
+<p>As the name indicates, a slice operation subdivides a set of polygons along horizontal or vertical cut lines.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ring1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">((</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ring2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ring3</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="n">inner_radius</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Slice the first ring across x=-3, the second ring across x=-3</span>
+<span class="c1"># and x=3, and the third ring across x=3</span>
+<span class="n">slices1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="n">ring1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">slices2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="n">ring2</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">slices3</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="n">ring3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+
+<span class="n">slices</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="s2">&quot;SLICES&quot;</span><span class="p">)</span>
+
+<span class="c1"># Keep only the left side of slices1, the center part of slices2</span>
+<span class="c1"># and the right side of slices3</span>
+<span class="n">slices</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">slices1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">slices</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">slices2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">slices</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">slices3</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+</pre></div>
+</div>
+<img alt="_images/slice_operation.svg" class="align-center" src="_images/slice_operation.svg" /></div>
+<div class="section" id="offset-operation">
+<h3>Offset Operation<a class="headerlink" href="#offset-operation" title="Permalink to this headline">¶</a></h3>
+<p>The function <a class="reference internal" href="geometry/gdstk.offset.html#gdstk.offset" title="gdstk.offset"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.offset()</span></code></a> dilates or erodes polygons by a fixed amount.
+It can operate on individual polygons or sets of them, in which case it may be necessary to set <code class="docutils literal notranslate"><span class="pre">use_union</span> <span class="pre">=</span> <span class="pre">True</span></code> to remove the impact of inner edges.
+The same is valid for polygons with holes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rect1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">rect2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Erosion: because we set `use_union=True`, the inner boundaries have no effect</span>
+<span class="n">outer</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">offset</span><span class="p">([</span><span class="n">rect1</span><span class="p">,</span> <span class="n">rect2</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">use_union</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/offset_operation.svg" class="align-center" src="_images/offset_operation.svg" /></div>
+<div class="section" id="fillet-operation">
+<h3>Fillet Operation<a class="headerlink" href="#fillet-operation" title="Permalink to this headline">¶</a></h3>
+<p>The method <a class="reference internal" href="geometry/gdstk.Polygon.html#gdstk.Polygon.fillet" title="gdstk.Polygon.fillet"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Polygon.fillet()</span></code></a> can be used to round polygon corners.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flexpath</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">([(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">filleted_path</span> <span class="o">=</span> <span class="n">flexpath</span><span class="o">.</span><span class="n">to_polygons</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">filleted_path</span><span class="o">.</span><span class="n">fillet</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<img alt="_images/fillet_operation.svg" class="align-center" src="_images/fillet_operation.svg" /></div>
+</div>
+<div class="section" id="gdsii-library">
+<h2>GDSII Library<a class="headerlink" href="#gdsii-library" title="Permalink to this headline">¶</a></h2>
+<p>All the information used to create a GDSII file is kept within an instance of <a class="reference internal" href="library/gdstk.Library.html#gdstk.Library" title="gdstk.Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Library</span></code></a>.
+Besides all the geometric and hierarchical information, this class also holds a name and the units for all entities.
+The name can be any ASCII string — it is simply stored in the GDSII file and has no other purpose in Gdstk.
+The units require some attention because they can impact the resolution of the polygons in the library when written to a file.</p>
+<div class="section" id="units-in-gdsii">
+<span id="units-in-gds"></span><h3>Units in GDSII<a class="headerlink" href="#units-in-gdsii" title="Permalink to this headline">¶</a></h3>
+<p>Two values are defined when creating a <a class="reference internal" href="library/gdstk.Library.html#gdstk.Library" title="gdstk.Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Library</span></code></a>: <code class="docutils literal notranslate"><span class="pre">unit</span></code> and <code class="docutils literal notranslate"><span class="pre">precision</span></code>.
+The value of <code class="docutils literal notranslate"><span class="pre">unit</span></code> defines the unit size—in meters—for all entities in the library.
+For example, if <code class="docutils literal notranslate"><span class="pre">unit</span> <span class="pre">=</span> <span class="pre">1e-6</span></code> (10⁻⁶ m, the default value), a vertex at (1, 2) should be interpreted as a vertex in real world position (1 × 10⁻⁶ m, 2 × 10⁻⁶ m).
+If <code class="docutils literal notranslate"><span class="pre">unit</span></code> changes to 0.001, then that same vertex would be located (in real world coordinates) at (0.001 m, 0.002 m), or (1 mm, 2 mm).</p>
+<p>The value of precision has to do with the type used to store coordinates in the GDSII file: signed 4-byte integers.
+Because of that, a finer coordinate grid than 1 <code class="docutils literal notranslate"><span class="pre">unit</span></code> is usually desired to define coordinates.
+That grid is defined, in meters, by <code class="docutils literal notranslate"><span class="pre">precision</span></code>, which defaults to <code class="docutils literal notranslate"><span class="pre">1e-9</span></code> (10⁻⁹ m).
+When the GDSII file is written, all vertices are snapped to the grid defined by <code class="docutils literal notranslate"><span class="pre">precision</span></code>.
+For example, for the default values of <code class="docutils literal notranslate"><span class="pre">unit</span></code> and <code class="docutils literal notranslate"><span class="pre">precision</span></code>, a vertex at (1.0512, 0.0001) represents real world coordinates (1.0512 × 10⁻⁶ m, 0.0001 × 10⁻⁶ m), or (1051.2 × 10⁻⁹ m, 0.1 × 10⁻⁹ m), which will be rounded to integers: (1051 × 10⁻⁹ m, 0 × 10⁻⁹ m), or (1.051 × 10⁻⁶ m, 0 × 10⁻⁶ m).
+The actual coordinate values written in the GDSII file will be the integers (1051, 0).
+By reducing the value of <code class="docutils literal notranslate"><span class="pre">precision</span></code> from 10⁻⁹ m to 10⁻¹² m, for example, the coordinates will have 3 additional decimal places of precision, so the stored values would be (1051200, 100).</p>
+<p>The downside of increasing the number of decimal places in the file is reducing the range of coordinates that can be stored (in real world units).
+That is because the range of coordinate values that can be written in the file are [-(2³²); 2³¹ - 1] = [-2,147,483,648; 2,147,483,647].
+For the default <code class="docutils literal notranslate"><span class="pre">precsision</span></code>, this range is [-2.147483648 m; 2.147483647 m].
+If <code class="docutils literal notranslate"><span class="pre">precision</span></code> is set to 10⁻¹² m, the same range is reduced by 1000 times: [-2.147483648 mm; 2.147483647 mm].</p>
+</div>
+<div class="section" id="saving-a-gdsii-file">
+<h3>Saving a GDSII File<a class="headerlink" href="#saving-a-gdsii-file" title="Permalink to this headline">¶</a></h3>
+<p>To save a GDSII file, simply use the <a class="reference internal" href="library/gdstk.Library.html#gdstk.Library.write_gds" title="gdstk.Library.write_gds"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Library.write_gds()</span></code></a> method, as in the <a class="reference internal" href="#first-gdsii"><span class="std std-ref">First GDSII Layout</span></a>.</p>
+<p>An SVG image from a specific cell can also be exported through <a class="reference internal" href="library/gdstk.Cell.html#gdstk.Cell.write_svg" title="gdstk.Cell.write_svg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Cell.write_svg()</span></code></a>, which was also demonstrated in <a class="reference internal" href="#first-gdsii"><span class="std std-ref">First GDSII Layout</span></a>.</p>
+</div>
+<div class="section" id="loading-a-gdsii-file">
+<h3>Loading a GDSII File<a class="headerlink" href="#loading-a-gdsii-file" title="Permalink to this headline">¶</a></h3>
+<p>The function <a class="reference internal" href="library/gdstk.read_gds.html#gdstk.read_gds" title="gdstk.read_gds"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.read_gds()</span></code></a> loads an existing GDSII file into a new instance of <a class="reference internal" href="library/gdstk.Library.html#gdstk.Library" title="gdstk.Library"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdstk.Library</span></code></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a GDSII file into a new library</span>
+<span class="n">lib1</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">read_gds</span><span class="p">(</span><span class="s2">&quot;filename.gds&quot;</span><span class="p">)</span>
+
+<span class="c1"># Load the same file, but convert all units to nm</span>
+<span class="n">lib2</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">read_gds</span><span class="p">(</span><span class="s2">&quot;filename.gds&quot;</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Access to the cells in the loaded library is provided through the list <a class="reference internal" href="library/gdstk.Library.html#gdstk.Library.cells" title="gdstk.Library.cells"><code class="xref py py-attr docutils literal notranslate"><span class="pre">gdstk.Library.cells</span></code></a>.
+The method <a class="reference internal" href="library/gdstk.Library.html#gdstk.Library.top_level" title="gdstk.Library.top_level"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gdstk.Library.top_level()</span></code></a> can be used to find the top-level cells in the library (cells on the top of the hierarchy, i.e., cell that are not referenced by any other cells).</p>
+</div>
+<div class="section" id="raw-cells">
+<h3>Raw Cells<a class="headerlink" href="#raw-cells" title="Permalink to this headline">¶</a></h3>
+<p>Library loaded using the previous method have all their elements interpreted and re-created by Gdstk.
+This can be time-consuming for large layouts.
+If the reason for loading a file is simply to re-use it’s cells without any modifications, the function <a class="reference internal" href="library/gdstk.read_rawcells.html#gdstk.read_rawcells" title="gdstk.read_rawcells"><code class="xref py py-func docutils literal notranslate"><span class="pre">gdstk.read_rawcells()</span></code></a> is much more efficient.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load all cells from a GDSII file without creating the actual geometry</span>
+<span class="n">cells</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">read_rawcells</span><span class="p">(</span><span class="s2">&quot;filename.gds&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use some loaded cell in the current design</span>
+<span class="n">my_ref</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">cells</span><span class="p">[</span><span class="s2">&quot;SOME_CELL&quot;</span><span class="p">],</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note that the units are not changed in this process, so the current design must use the same <code class="docutils literal notranslate"><span class="pre">unit</span></code> and <code class="docutils literal notranslate"><span class="pre">precision</span></code> as the loaded cells.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="integrated-photonics">
+<span id="example-integrated-photonics"></span><h3>Integrated Photonics<a class="headerlink" href="#integrated-photonics" title="Permalink to this headline">¶</a></h3>
+<p>This example demonstrates the use of Gdstk primitives to create more complex structures.</p>
+<p>These structures are commonly used in the field of integrated photonics.</p>
+<p><a class="reference download internal" download="" href="_downloads/488613e368b36f9fae1f453b83e98d40/photonics.py"><code class="xref download docutils literal notranslate"><span class="pre">photonics.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/5a8b2123c339221aec5820c5cb4dd018/photonics.gds"><code class="xref download docutils literal notranslate"><span class="pre">photonics.gds</span></code></a></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">######################################################################</span>
+<span class="c1">#                                                                    #</span>
+<span class="c1">#  Copyright 2020-2020 Lucas Heitzmann Gabrielli.                    #</span>
+<span class="c1">#  This file is part of gdstk, distributed under the terms of the    #</span>
+<span class="c1">#  Boost Software License - Version 1.0.  See the accompanying       #</span>
+<span class="c1">#  LICENSE file or &lt;http://www.boost.org/LICENSE_1_0.txt&gt;            #</span>
+<span class="c1">#                                                                    #</span>
+<span class="c1">######################################################################</span>
+
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">gdstk</span>
+
+
+<span class="k">def</span> <span class="nf">grating</span><span class="p">(</span>
+    <span class="n">period</span><span class="p">,</span>
+    <span class="n">number_of_teeth</span><span class="p">,</span>
+    <span class="n">fill_frac</span><span class="p">,</span>
+    <span class="n">width</span><span class="p">,</span>
+    <span class="n">position</span><span class="p">,</span>
+    <span class="n">direction</span><span class="p">,</span>
+    <span class="n">lda</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">sin_theta</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">focus_distance</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">focus_width</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+    <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">datatype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Straight or focusing grating.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        period: Grating period.</span>
+<span class="sd">        number_of_teeth: Number of teeth in the grating.</span>
+<span class="sd">        fill_frac: Filling fraction of the teeth (wrt period).</span>
+<span class="sd">        width: Width of the grating.</span>
+<span class="sd">        position: Grating position (feed point).</span>
+<span class="sd">        direction: One of {&quot;+x&quot;, &quot;-x&quot;, &quot;+y&quot;, &quot;-y&quot;}.</span>
+<span class="sd">        lda: Free-space wavelength.</span>
+<span class="sd">        sin_theta: Sine of incidence angle.</span>
+<span class="sd">        focus_distance: Focus distance (negative for straight grating).</span>
+<span class="sd">        focus_width: If non-negative, the focusing area is included in</span>
+<span class="sd">          the result (usually for negative resists) and this is the</span>
+<span class="sd">          width of the waveguide connecting to the grating.</span>
+<span class="sd">        tolerance: Polygonal approximation tolerance.</span>
+<span class="sd">        layer: GDSII layer number</span>
+<span class="sd">        datatype: GDSII data type number</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">        List of Polygon</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">focus_distance</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">width</span><span class="p">,</span>
+                <span class="n">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">number_of_teeth</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">fill_frac</span><span class="p">)</span> <span class="o">*</span> <span class="n">period</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="p">[</span><span class="n">period</span> <span class="o">*</span> <span class="n">fill_frac</span><span class="p">]</span> <span class="o">*</span> <span class="n">number_of_teeth</span><span class="p">,</span>
+            <span class="n">period</span><span class="p">,</span>
+            <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+            <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">horizontal</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span><span class="o">.</span><span class="n">to_polygons</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">neff</span> <span class="o">=</span> <span class="n">lda</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">period</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin_theta</span>
+        <span class="n">qmin</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">focus_distance</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">period</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">c3</span> <span class="o">=</span> <span class="n">neff</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">sin_theta</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">width</span>
+        <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">qmin</span><span class="p">,</span> <span class="n">qmin</span> <span class="o">+</span> <span class="n">number_of_teeth</span><span class="p">):</span>
+            <span class="n">c1</span> <span class="o">=</span> <span class="n">q</span> <span class="o">*</span> <span class="n">lda</span> <span class="o">*</span> <span class="n">sin_theta</span>
+            <span class="n">c2</span> <span class="o">=</span> <span class="p">(</span><span class="n">q</span> <span class="o">*</span> <span class="n">lda</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="n">curve</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">width</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="n">w</span><span class="p">,</span>
+                <span class="p">(</span><span class="n">c1</span> <span class="o">+</span> <span class="n">neff</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">c2</span> <span class="o">-</span> <span class="n">c3</span> <span class="o">*</span> <span class="p">(</span><span class="n">width</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="n">w</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="n">c3</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span>
+                <span class="n">curve</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+                <span class="n">period</span> <span class="o">*</span> <span class="n">fill_frac</span><span class="p">,</span>
+                <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">,</span>
+                <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+                <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">path</span><span class="o">.</span><span class="n">parametric</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">to_polygons</span><span class="p">())</span>
+        <span class="n">p0</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">points</span>
+        <span class="n">sz</span> <span class="o">=</span> <span class="n">p0</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">focus_width</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">p0</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">p0</span><span class="p">[</span><span class="n">sz</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:],</span> <span class="n">p0</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">position</span><span class="p">]))</span>
+            <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">focus_width</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">p0</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">p0</span><span class="p">[</span><span class="n">sz</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:],</span>
+                    <span class="n">p0</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="p">[</span>
+                        <span class="p">(</span><span class="n">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">focus_width</span><span class="p">,</span> <span class="n">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                        <span class="p">(</span><span class="n">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">focus_width</span><span class="p">,</span> <span class="n">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                    <span class="p">],</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;-x&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;+x&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;-y&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">p</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Examples</span>
+    <span class="n">lib</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+
+    <span class="c1"># Negative resist example</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mf">0.45</span>
+    <span class="n">bend_radius</span> <span class="o">=</span> <span class="mf">50.0</span>
+    <span class="n">ring_radius</span> <span class="o">=</span> <span class="mf">20.0</span>
+    <span class="n">taper_len</span> <span class="o">=</span> <span class="mf">50.0</span>
+    <span class="n">input_gap</span> <span class="o">=</span> <span class="mf">150.0</span>
+    <span class="n">io_gap</span> <span class="o">=</span> <span class="mf">500.0</span>
+    <span class="n">wg_gap</span> <span class="o">=</span> <span class="mf">20.0</span>
+    <span class="n">ring_gaps</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.06</span> <span class="o">+</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+
+    <span class="n">ring</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;NRing&quot;</span><span class="p">)</span>
+    <span class="n">ring</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">ring_radius</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">ring_radius</span><span class="p">,</span> <span class="n">ring_radius</span> <span class="o">-</span> <span class="n">width</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.001</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">grat</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;NGrat&quot;</span><span class="p">)</span>
+    <span class="n">grat</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="o">*</span><span class="n">grating</span><span class="p">(</span>
+            <span class="mf">0.626</span><span class="p">,</span>
+            <span class="mi">28</span><span class="p">,</span>
+            <span class="mf">0.5</span><span class="p">,</span>
+            <span class="mi">19</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="s2">&quot;+y&quot;</span><span class="p">,</span>
+            <span class="mf">1.55</span><span class="p">,</span>
+            <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">180</span><span class="p">),</span>
+            <span class="mf">21.5</span><span class="p">,</span>
+            <span class="n">width</span><span class="p">,</span>
+            <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">taper</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;NTaper&quot;</span><span class="p">)</span>
+    <span class="n">taper</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">0.12</span><span class="p">)</span><span class="o">.</span><span class="n">vertical</span><span class="p">(</span><span class="n">taper_len</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">))</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;Negative&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">gap</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ring_gaps</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">input_gap</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">taper_len</span><span class="p">),</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+            <span class="n">bend_radius</span><span class="o">=</span><span class="n">bend_radius</span><span class="p">,</span>
+            <span class="n">gdsii_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">600</span> <span class="o">-</span> <span class="n">wg_gap</span> <span class="o">*</span> <span class="n">i</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="n">io_gap</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span> <span class="o">+</span> <span class="n">wg_gap</span> <span class="o">*</span> <span class="n">i</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">ring</span><span class="p">,</span> <span class="p">(</span><span class="n">input_gap</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">gap</span><span class="p">,</span> <span class="mi">300</span><span class="p">)))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">taper</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ring_gaps</span><span class="p">),</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="n">input_gap</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span>
+            <span class="n">grat</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">io_gap</span><span class="p">,</span> <span class="mi">900</span> <span class="o">+</span> <span class="n">taper_len</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ring_gaps</span><span class="p">),</span>
+            <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="n">input_gap</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Positive resist example</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mf">0.45</span>
+    <span class="n">ring_radius</span> <span class="o">=</span> <span class="mf">20.0</span>
+    <span class="n">big_margin</span> <span class="o">=</span> <span class="mf">10.0</span>
+    <span class="n">small_margin</span> <span class="o">=</span> <span class="mf">5.0</span>
+    <span class="n">taper_len</span> <span class="o">=</span> <span class="mf">50.0</span>
+    <span class="n">bus_len</span> <span class="o">=</span> <span class="mf">400.0</span>
+    <span class="n">input_gap</span> <span class="o">=</span> <span class="mf">150.0</span>
+    <span class="n">io_gap</span> <span class="o">=</span> <span class="mf">500.0</span>
+    <span class="n">wg_gap</span> <span class="o">=</span> <span class="mf">20.0</span>
+    <span class="n">ring_gaps</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.06</span> <span class="o">+</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+
+    <span class="n">ring_bus</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span>
+        <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">taper_len</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">taper_len</span> <span class="o">+</span> <span class="n">bus_len</span><span class="p">)],</span>
+        <span class="p">[</span><span class="n">small_margin</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">small_margin</span> <span class="o">+</span> <span class="n">width</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">[</span><span class="n">small_margin</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">small_margin</span> <span class="o">+</span> <span class="n">width</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">21.5</span><span class="p">),</span> <span class="n">offset</span><span class="o">=</span><span class="n">small_margin</span> <span class="o">+</span> <span class="mi">19</span><span class="p">)</span>
+    <span class="n">grat</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;PGrat&quot;</span><span class="p">)</span>
+    <span class="n">grat</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">grat</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="o">*</span><span class="n">grating</span><span class="p">(</span>
+            <span class="mf">0.626</span><span class="p">,</span>
+            <span class="mi">28</span><span class="p">,</span>
+            <span class="mf">0.5</span><span class="p">,</span>
+            <span class="mi">19</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="s2">&quot;+y&quot;</span><span class="p">,</span>
+            <span class="mf">1.55</span><span class="p">,</span>
+            <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">180</span><span class="p">),</span>
+            <span class="mf">21.5</span><span class="p">,</span>
+            <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">taper</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;PTaper&quot;</span><span class="p">)</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">([(</span><span class="mf">0.12</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.12</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">big_margin</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">small_margin</span><span class="p">,</span> <span class="n">taper_len</span><span class="p">),</span> <span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">taper_len</span><span class="p">)])</span>
+    <span class="n">taper</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">mirror</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">taper</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;Positive&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">gap</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ring_gaps</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">FlexPath</span><span class="p">(</span>
+            <span class="p">[(</span><span class="n">input_gap</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">taper_len</span> <span class="o">+</span> <span class="n">bus_len</span><span class="p">)],</span>
+            <span class="n">width</span><span class="o">=</span><span class="p">[</span><span class="n">small_margin</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">offset</span><span class="o">=</span><span class="n">small_margin</span> <span class="o">+</span> <span class="n">width</span><span class="p">,</span>
+            <span class="n">bend_radius</span><span class="o">=</span><span class="n">bend_radius</span><span class="p">,</span>
+            <span class="n">gdsii_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">600</span> <span class="o">-</span> <span class="n">bus_len</span> <span class="o">-</span> <span class="n">wg_gap</span> <span class="o">*</span> <span class="n">i</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="n">io_gap</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">segment</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span> <span class="o">+</span> <span class="n">wg_gap</span> <span class="o">*</span> <span class="n">i</span><span class="p">),</span> <span class="n">relative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">gap</span>
+        <span class="n">ring_margin</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="mi">300</span> <span class="o">-</span> <span class="n">ring_radius</span> <span class="o">-</span> <span class="n">big_margin</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">dx</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">ring_radius</span> <span class="o">+</span> <span class="n">big_margin</span><span class="p">,</span> <span class="mi">300</span> <span class="o">+</span> <span class="n">ring_radius</span> <span class="o">+</span> <span class="n">big_margin</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">ring_hole</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">dx</span> <span class="o">+</span> <span class="n">ring_radius</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">ring_radius</span><span class="p">,</span> <span class="n">ring_radius</span> <span class="o">-</span> <span class="n">width</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.001</span>
+        <span class="p">)</span>
+        <span class="n">polys</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">boolean</span><span class="p">(</span>
+            <span class="n">gdstk</span><span class="o">.</span><span class="n">boolean</span><span class="p">(</span><span class="n">ring_bus</span><span class="p">,</span> <span class="n">ring_margin</span><span class="p">,</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">),</span>
+            <span class="n">ring_hole</span><span class="p">,</span>
+            <span class="s2">&quot;not&quot;</span><span class="p">,</span>
+            <span class="n">precision</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">input_gap</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">polys</span><span class="p">])</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">taper</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ring_gaps</span><span class="p">),</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="n">input_gap</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span>
+            <span class="n">grat</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">io_gap</span><span class="p">,</span> <span class="mi">900</span> <span class="o">+</span> <span class="n">taper_len</span><span class="p">),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ring_gaps</span><span class="p">),</span>
+            <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="n">input_gap</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Save to a gds file</span>
+    <span class="n">lib</span><span class="o">.</span><span class="n">write_gds</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;photonics.gds&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="using-system-fonts">
+<h3>Using System Fonts<a class="headerlink" href="#using-system-fonts" title="Permalink to this headline">¶</a></h3>
+<p>This example uses <a class="reference external" href="https://matplotlib.org/">matplotlib</a> to render text using any typeface present in the system.
+The glyph paths are then transformed into polygon arrays that can be used to create <cite>gdstk.PolygonSet</cite> objects.</p>
+<p><a class="reference download internal" download="" href="_downloads/135c0c362d763977fdad1d9729652b3c/fonts.py"><code class="xref download docutils literal notranslate"><span class="pre">fonts.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="_downloads/34e92fcdce088412b57581d604d16ba1/fonts.gds"><code class="xref download docutils literal notranslate"><span class="pre">fonts.gds</span></code></a></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">######################################################################</span>
+<span class="c1">#                                                                    #</span>
+<span class="c1">#  Copyright 2020-2020 Lucas Heitzmann Gabrielli.                    #</span>
+<span class="c1">#  This file is part of gdstk, distributed under the terms of the    #</span>
+<span class="c1">#  Boost Software License - Version 1.0.  See the accompanying       #</span>
+<span class="c1">#  LICENSE file or &lt;http://www.boost.org/LICENSE_1_0.txt&gt;            #</span>
+<span class="c1">#                                                                    #</span>
+<span class="c1">######################################################################</span>
+
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">gdstk</span>
+<span class="kn">from</span> <span class="nn">matplotlib.font_manager</span> <span class="kn">import</span> <span class="n">FontProperties</span>
+<span class="kn">from</span> <span class="nn">matplotlib.textpath</span> <span class="kn">import</span> <span class="n">TextPath</span>
+
+
+<span class="k">def</span> <span class="nf">render_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">font_prop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">TextPath</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="n">font_prop</span><span class="p">)</span>
+    <span class="n">polys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">xmax</span> <span class="o">=</span> <span class="n">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">points</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">iter_segments</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">code</span> <span class="o">==</span> <span class="n">path</span><span class="o">.</span><span class="n">MOVETO</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="n">tolerance</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">code</span> <span class="o">==</span> <span class="n">path</span><span class="o">.</span><span class="n">LINETO</span><span class="p">:</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">size</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">code</span> <span class="o">==</span> <span class="n">path</span><span class="o">.</span><span class="n">CURVE3</span><span class="p">:</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">quadratic</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">size</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">code</span> <span class="o">==</span> <span class="n">path</span><span class="o">.</span><span class="n">CURVE4</span><span class="p">:</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">cubic</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">size</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">code</span> <span class="o">==</span> <span class="n">path</span><span class="o">.</span><span class="n">CLOSEPOLY</span><span class="p">:</span>
+            <span class="n">poly</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">points</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">poly</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">poly</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">xmax</span><span class="p">:</span>
+                    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">polys</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+                    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">inside</span><span class="p">(</span><span class="n">poly</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">polys</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">precision</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">tolerance</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+                            <span class="n">p</span> <span class="o">=</span> <span class="n">polys</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                            <span class="n">b</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">boolean</span><span class="p">([</span><span class="n">p</span><span class="p">],</span> <span class="p">[</span><span class="n">poly</span><span class="p">],</span> <span class="s2">&quot;xor&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">tolerance</span><span class="p">)</span>
+                            <span class="n">poly</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">points</span>
+                            <span class="k">break</span>
+                        <span class="k">elif</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">inside</span><span class="p">(</span><span class="n">polys</span><span class="p">[</span><span class="n">i</span><span class="p">][:</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">poly</span><span class="p">],</span> <span class="n">precision</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">tolerance</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+                            <span class="n">p</span> <span class="o">=</span> <span class="n">polys</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                            <span class="n">b</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">boolean</span><span class="p">([</span><span class="n">p</span><span class="p">],</span> <span class="p">[</span><span class="n">poly</span><span class="p">],</span> <span class="s2">&quot;xor&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">tolerance</span><span class="p">)</span>
+                            <span class="n">poly</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">points</span>
+                        <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="n">xmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">poly</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+                <span class="n">polys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">polys</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="n">FontProperties</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="n">gdstk</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">pts</span> <span class="ow">in</span> <span class="n">render_text</span><span class="p">(</span><span class="s2">&quot;Text rendering&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">font_prop</span><span class="o">=</span><span class="n">fp</span><span class="p">)]</span>
+    <span class="n">lib</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+    <span class="n">cell</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;TXT&quot;</span><span class="p">)</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">lib</span><span class="o">.</span><span class="n">write_gds</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;fonts.gds&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reference_python.html" class="btn btn-neutral float-right" title="Python API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Gdstk Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Lucas H. Gabrielli
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

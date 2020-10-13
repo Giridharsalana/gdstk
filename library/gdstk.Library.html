@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>gdstk.Library &mdash; gdstk 0.1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gdstk.GdsWriter" href="gdstk.GdsWriter.html" />
+    <link rel="prev" title="gdstk.RawCell" href="gdstk.RawCell.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gdstk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference_python.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../reference_python.html#geometry-construction">Geometry Construction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../reference_python.html#library-organization">Library Organization</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gdstk.Label.html">gdstk.Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.Reference.html">gdstk.Reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.Cell.html">gdstk.Cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.RawCell.html">gdstk.RawCell</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">gdstk.Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.GdsWriter.html">gdstk.GdsWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.read_gds.html">gdstk.read_gds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.read_rawcells.html">gdstk.read_rawcells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.gds_units.html">gdstk.gds_units</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gdstk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../reference_python.html">Python API Reference</a> &raquo;</li>
+        
+      <li>gdstk.Library</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/library/gdstk.Library.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gdstk-library">
+<h1>gdstk.Library<a class="headerlink" href="#gdstk-library" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="gdstk.Library">
+<em class="property">class </em><code class="sig-prename descclassname">gdstk.</code><code class="sig-name descname">Library</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'library'</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">1e-06</span></em>, <em class="sig-param"><span class="n">precision</span><span class="o">=</span><span class="default_value">1e-09</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdstk.Library" title="Permalink to this definition">¶</a></dt>
+<dd><p>GDSII library.</p>
+<p>The library is a container for multiple cells which keeps track of the
+units used to generate the design. The library can be saved to a GDSII
+stream file and vice-versa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Library name.</p></li>
+<li><p><strong>unit</strong> – User units in meters.</p></li>
+<li><p><strong>precision</strong> – Desired precision to store the units once written to a
+GDSII file.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../gettingstarted.html#units-in-gds"><span class="std std-ref">Units in GDSII</span></a></p>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Library.add" title="gdstk.Library.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(*cells)</p></td>
+<td><p>Add cells to this library.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Library.new_cell" title="gdstk.Library.new_cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_cell</span></code></a>(name)</p></td>
+<td><p>Create a new cell and add it to this library.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Library.remove" title="gdstk.Library.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(*cells)</p></td>
+<td><p>Remove cells from this library.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Library.top_level" title="gdstk.Library.top_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">top_level</span></code></a>()</p></td>
+<td><p>Return the top-level cells in the library.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Library.write_gds" title="gdstk.Library.write_gds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_gds</span></code></a>(outfile[, max_points])</p></td>
+<td><p>Save this library to a GDSII file.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Library.cells" title="gdstk.Library.cells"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cells</span></code></a></p></td>
+<td><p>List of library cells.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Library.name" title="gdstk.Library.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p>Library name.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="gdstk.Library.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">cells</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Library.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add cells to this library.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygon</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="s2">&quot;MAIN&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">polygon</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Library.cells">
+<code class="sig-name descname">cells</code><a class="headerlink" href="#gdstk.Library.cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of library cells.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>This attribute is read-only.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Library.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#gdstk.Library.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Library name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Library.new_cell">
+<code class="sig-name descname">new_cell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="gdstk.Cell.html#gdstk.Cell" title="gdstk.Cell">gdstk.Cell</a><a class="headerlink" href="#gdstk.Library.new_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new cell and add it to this library.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name of the new cell.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lib</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">new_cell</span><span class="p">(</span><span class="s2">&quot;MAIN&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">polygon</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Library.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">cells</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Library.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove cells from this library.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Library.top_level">
+<code class="sig-name descname">top_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#gdstk.Library.top_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the top-level cells in the library.</p>
+<p>Top-level cells are cells that do not appear as dependency of any other
+cells in the library.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Library.write_gds">
+<code class="sig-name descname">write_gds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">outfile</span></em>, <em class="sig-param"><span class="n">max_points</span><span class="o">=</span><span class="default_value">199</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#gdstk.Library.write_gds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this library to a GDSII file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>outfile</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Name of the output file.</p></li>
+<li><p><strong>max_points</strong> – Maximal number of vertices per polygon. Polygons with
+more vertices that this are automatically fractured.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../gettingstarted.html#getting-started"><span class="std std-ref">Getting Started</span></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gdstk.GdsWriter.html" class="btn btn-neutral float-right" title="gdstk.GdsWriter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gdstk.RawCell.html" class="btn btn-neutral float-left" title="gdstk.RawCell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Lucas H. Gabrielli
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

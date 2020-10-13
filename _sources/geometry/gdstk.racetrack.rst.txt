@@ -1,0 +1,6 @@
+﻿gdstk.racetrack
+===============
+
+.. currentmodule:: gdstk
+
+.. autofunction:: racetrack

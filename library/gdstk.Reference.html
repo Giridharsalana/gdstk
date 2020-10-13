@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>gdstk.Reference &mdash; gdstk 0.1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gdstk.Cell" href="gdstk.Cell.html" />
+    <link rel="prev" title="gdstk.Label" href="gdstk.Label.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gdstk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference_python.html">Python API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../reference_python.html#geometry-construction">Geometry Construction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../reference_python.html#library-organization">Library Organization</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gdstk.Label.html">gdstk.Label</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">gdstk.Reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.Cell.html">gdstk.Cell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.RawCell.html">gdstk.RawCell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.Library.html">gdstk.Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.GdsWriter.html">gdstk.GdsWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.read_gds.html">gdstk.read_gds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.read_rawcells.html">gdstk.read_rawcells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gdstk.gds_units.html">gdstk.gds_units</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gdstk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../reference_python.html">Python API Reference</a> &raquo;</li>
+        
+      <li>gdstk.Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/library/gdstk.Reference.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gdstk-reference">
+<h1>gdstk.Reference<a class="headerlink" href="#gdstk-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="gdstk.Reference">
+<em class="property">class </em><code class="sig-prename descclassname">gdstk.</code><code class="sig-name descname">Reference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">rotation</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">magnification</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">x_reflection</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">columns</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">rows</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">spacing</span><span class="o">=</span><span class="default_value">0, 0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdstk.Reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference to another cell.</p>
+<p>References are used to instance repetitive geometries across different
+cells, optionally applying a transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cell</strong> (<a class="reference internal" href="gdstk.Cell.html#gdstk.Cell" title="gdstk.Cell"><em>gdstk.Cell</em></a><em>, </em><a class="reference internal" href="gdstk.RawCell.html#gdstk.RawCell" title="gdstk.RawCell"><em>gdstk.RawCell</em></a><em>, </em><em>str</em>) – referenced cell.</p></li>
+<li><p><strong>origin</strong> – Insertion position of the referenced cell.</p></li>
+<li><p><strong>rotation</strong> – Cell rotation angle (in radians).</p></li>
+<li><p><strong>magnification</strong> – Geometry scaling for this reference.</p></li>
+<li><p><strong>x_reflection</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the geometry is reflected across the
+horizontal axis before rotation.</p></li>
+<li><p><strong>columns</strong> – Number of repetitions along the horizontal direction.</p></li>
+<li><p><strong>rows</strong> – Number of repetitions along the vertical direction.</p></li>
+<li><p><strong>spacing</strong> – Distance between insertion points of adjacent columns and
+rows.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygons</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cell</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="s2">&quot;F_CELL&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cell</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">polygons</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ref</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">f_cell</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">array_ref</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">f_cell</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>                            <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="../_images/init5.svg" class="align-center" src="../_images/init5.svg" /><div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">cell</span></code> is a str (cell name), operations on the referenced cell
+are not performed, such as computing the bounding box.</p>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Reference.bounding_box" title="gdstk.Reference.bounding_box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bounding_box</span></code></a>()</p></td>
+<td><p>Calculate the bounding box of this reference.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Reference.copy" title="gdstk.Reference.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Create a copy this reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Reference.delete_property" title="gdstk.Reference.delete_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_property</span></code></a>(attr)</p></td>
+<td><p>Delete property of this polygon.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Reference.get_property" title="gdstk.Reference.get_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_property</span></code></a>(attr)</p></td>
+<td><p>Return a property of this polygon.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Reference.set_property" title="gdstk.Reference.set_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_property</span></code></a>(attr, value)</p></td>
+<td><p>Set a GDSII property for this reference.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Reference.cell" title="gdstk.Reference.cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cell</span></code></a></p></td>
+<td><p>Cell referenced by this object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Reference.columns" title="gdstk.Reference.columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">columns</span></code></a></p></td>
+<td><p>Number of columns in the array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Reference.magnification" title="gdstk.Reference.magnification"><code class="xref py py-obj docutils literal notranslate"><span class="pre">magnification</span></code></a></p></td>
+<td><p>Reference magnification.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Reference.origin" title="gdstk.Reference.origin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">origin</span></code></a></p></td>
+<td><p>Reference origin.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Reference.rotation" title="gdstk.Reference.rotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotation</span></code></a></p></td>
+<td><p>Reference rotation angle (in radians).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Reference.rows" title="gdstk.Reference.rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rows</span></code></a></p></td>
+<td><p>Number of rows in the array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdstk.Reference.spacing" title="gdstk.Reference.spacing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spacing</span></code></a></p></td>
+<td><p>Spacing between copies in the array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdstk.Reference.x_reflection" title="gdstk.Reference.x_reflection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">x_reflection</span></code></a></p></td>
+<td><p>Reference reflection across the x axis.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="gdstk.Reference.bounding_box">
+<code class="sig-name descname">bounding_box</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#gdstk.Reference.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the bounding box of this reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The lower-left and upper-right corners of the bounding box of the
+polygon: <code class="docutils literal notranslate"><span class="pre">((min_x,</span> <span class="pre">min_y),</span> <span class="pre">(max_x,</span> <span class="pre">max_y))</span></code>.</p>
+</dd>
+</dl>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>This operation can be slow because the precise bounding box
+calculation requires recursively querying the polygonal
+representations of all shapes created by this reference.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">polygons</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cell</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Cell</span><span class="p">(</span><span class="s2">&quot;F_CELL&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f_cell</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">polygons</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">array_ref</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">Reference</span><span class="p">(</span><span class="n">f_cell</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span>
+<span class="gp">... </span>                            <span class="n">columns</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bbox</span> <span class="o">=</span> <span class="n">array_ref</span><span class="o">.</span><span class="n">bounding_box</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
+<span class="go">((-12.816310409006173, 1.7677669529663689),</span>
+<span class="go"> (11.313708498984761, 27.66555281392367))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">polygon_bb</span> <span class="o">=</span> <span class="n">gdstk</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="o">*</span><span class="n">bbox</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/bounding_box2.svg" class="align-center" src="../_images/bounding_box2.svg" /></dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.cell">
+<code class="sig-name descname">cell</code><a class="headerlink" href="#gdstk.Reference.cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cell referenced by this object.</p>
+<div class="admonition-notes admonition">
+<p class="admonition-title">Notes</p>
+<p>This attribute is read-only.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.columns">
+<code class="sig-name descname">columns</code><a class="headerlink" href="#gdstk.Reference.columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of columns in the array.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Reference.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#gdstk.Reference" title="gdstk.Reference">gdstk.Reference</a><a class="headerlink" href="#gdstk.Reference.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy this reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Copy of this reference.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Reference.delete_property">
+<code class="sig-name descname">delete_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Reference.delete_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete property of this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attr</strong> (<em>number</em>) – Property number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Reference.get_property">
+<code class="sig-name descname">get_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#gdstk.Reference.get_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a property of this polygon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attr</strong> (<em>number</em>) – Property number.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Property value. If the property number does not exist,
+<code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.magnification">
+<code class="sig-name descname">magnification</code><a class="headerlink" href="#gdstk.Reference.magnification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference magnification.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.origin">
+<code class="sig-name descname">origin</code><a class="headerlink" href="#gdstk.Reference.origin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference origin.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.rotation">
+<code class="sig-name descname">rotation</code><a class="headerlink" href="#gdstk.Reference.rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference rotation angle (in radians).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.rows">
+<code class="sig-name descname">rows</code><a class="headerlink" href="#gdstk.Reference.rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of rows in the array.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gdstk.Reference.set_property">
+<code class="sig-name descname">set_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attr</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span> &#x2192; self<a class="headerlink" href="#gdstk.Reference.set_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a GDSII property for this reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attr</strong> (<em>number</em>) – Property number.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Property value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.spacing">
+<code class="sig-name descname">spacing</code><a class="headerlink" href="#gdstk.Reference.spacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spacing between copies in the array.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="gdstk.Reference.x_reflection">
+<code class="sig-name descname">x_reflection</code><a class="headerlink" href="#gdstk.Reference.x_reflection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference reflection across the x axis.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gdstk.Cell.html" class="btn btn-neutral float-right" title="gdstk.Cell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gdstk.Label.html" class="btn btn-neutral float-left" title="gdstk.Label" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Lucas H. Gabrielli
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

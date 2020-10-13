@@ -1,0 +1,6 @@
+﻿gdstk.read\_gds
+===============
+
+.. currentmodule:: gdstk
+
+.. autofunction:: read_gds

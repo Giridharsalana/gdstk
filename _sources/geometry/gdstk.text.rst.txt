@@ -1,0 +1,6 @@
+﻿gdstk.text
+==========
+
+.. currentmodule:: gdstk
+
+.. autofunction:: text

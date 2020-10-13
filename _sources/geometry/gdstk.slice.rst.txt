@@ -1,0 +1,6 @@
+﻿gdstk.slice
+===========
+
+.. currentmodule:: gdstk
+
+.. autofunction:: slice

@@ -1,0 +1,66 @@
+﻿gdstk.Polygon
+=============
+
+.. currentmodule:: gdstk
+
+.. autoclass:: Polygon
+   :members:
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      
+      
+         ~Polygon.area
+      
+      
+         ~Polygon.bounding_box
+      
+      
+         ~Polygon.copy
+      
+      
+         ~Polygon.delete_property
+      
+      
+         ~Polygon.fillet
+      
+      
+         ~Polygon.fracture
+      
+      
+         ~Polygon.get_property
+      
+      
+         ~Polygon.mirror
+      
+      
+         ~Polygon.rotate
+      
+      
+         ~Polygon.scale
+      
+      
+         ~Polygon.set_property
+      
+      
+         ~Polygon.translate
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Polygon.datatype
+      ~Polygon.layer
+      ~Polygon.points
+      ~Polygon.size
+   
+   

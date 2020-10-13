@@ -1,0 +1,6 @@
+﻿gdstk.read\_rawcells
+====================
+
+.. currentmodule:: gdstk
+
+.. autofunction:: read_rawcells
